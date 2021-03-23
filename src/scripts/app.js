@@ -36,8 +36,8 @@ form.addEventListener('submit', (e) => {
         li.addEventListener('click', (e) => {
             console.log(optionCount);
             let number = li.getAttribute('data-option');
-            li.remove();
             options[number] = 'deleted';
+            li.remove();   
             console.log(options);
         });
     }else{
@@ -46,6 +46,7 @@ form.addEventListener('submit', (e) => {
 });
 
 btnGo.addEventListener('click', (e) => {
+    //Cherche sélectionne aléatoirement un mot et recommence si il s'agit de "deleted" 
     do {
         resultOption = options[Math.floor(Math.random() * options.length)];
     } while (resultOption === "deleted");

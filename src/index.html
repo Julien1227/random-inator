@@ -18,19 +18,37 @@
   <form class="form">
     <label>Entrez vos options:</label>
     <div class="form-feild">
-      <input id="optionInput" type="text" placeholder="Entrez vos options ici..." value="">
-      <input class="btn-submit" type="submit">
+      <input class="form-feild-input" id="optionInput" type="text" placeholder="Entrez vos options ici..." value="">
+      <button class="btn btn-submit" type="submit">
+        <svg id="form-arrow" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
+          <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+        </svg>
+      </button>
     </div>
   </form>
 
   <ul id="option-list"></ul>
 
-  <div>
+  <div class="result-container">
     <p class="result"></p>
   </div>
 
-  <button id="go">Go !</button>
+  <div class="bottom-container">
+    <button class="btn" id="go">Go !</button>
+  </div>
 
   <script src="scripts/app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
 </body>
+
+<svg version="1.1" preserveAspectRatio="none" class="background" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 362 503">
+  <defs>
+    <linearGradient id="MyGradient" gradientTransform="rotate(90)">
+      <stop id="gradientStart" offset="5%" />
+      <stop id="gradientStop" offset="95%"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#MyGradient)" d="M362,0H0V502.34c155.36,5.27,291.61-21.24,362-66.75Z"/>
+</svg>
 </html>

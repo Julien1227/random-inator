@@ -1,4 +1,17 @@
+body {
+    margin: 0;
+}
+
 ul {
     padding: 0;
     list-style: none;
+}
+
+button, input {
+    background-color: transparent;
+    border: none;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    padding: 0;
 }

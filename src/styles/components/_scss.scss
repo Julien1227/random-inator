@@ -1,0 +1,107 @@
+body {
+    margin: 2rem;
+    &.show-result {
+        .result-container{
+            transform: translateY(0);
+        }
+    }
+}
+
+.btn {
+    cursor: pointer;
+    padding: 1rem;
+    background-color: $c-btn;
+    border-radius: $radius;
+}
+
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1000;
+    
+    width: 100vw;
+    height: 70%;
+    #gradientStart {stop-color: rgb(27, 27, 27);}
+    #gradientStop {stop-color: rgb(63, 63, 63);}
+}
+
+.form {
+    text-align: left;
+    
+    &-feild {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        margin-top: 0.5rem;
+        background-color: $white;
+        color: $black;
+        border-radius: $radius;
+        
+        &-input {
+            width: 100%;
+            padding: 1rem;
+        }
+        
+        .btn-submit{
+            display: flex;
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+}
+
+@keyframes fade-in {
+    from {opacity: 0; transform: translateY(1rem);}
+    to {opacity: 1;transform: translateY(0);}
+}
+
+.option-list{
+    &-el {
+        display: inline-flex;
+        margin: 0.5rem;
+
+        padding: 1rem;
+        border-radius: $radius;
+        background-color: $c-btn;
+
+        cursor: pointer;
+        animation: fade-in 0.3s;
+
+        &:last-child{margin-right: inherit;}
+
+        & p {
+            margin: 0;
+        }
+    }
+}
+
+.bottom-container {
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    padding-bottom: 2rem;
+    & .btn {
+        font-size: $h3;
+        padding: 1.2rem 1.5rem;
+    }
+}
+
+.result-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($black, .5);
+
+    transform: translateY(-100%);
+}
