@@ -33,16 +33,20 @@ var options = [];
 var optionCount = 0;
 var resultOption;
 
-//Sélectionne une réponse
+if (body.hasAttribute('class', 'locked-goBtn' == true)) {
+    disabledBtnGo(true);
+}
 
+//Sélectionne une réponse
 form.addEventListener('submit', (e) => {
     //Empêche le naviguateur de recharger, récupère la valeur du input, vide le input
     e.preventDefault();
     let inputValue = optionInput.value;
     optionInput.value = "";
-
+    
     //Si le input n'est pas vide
     if (inputValue != "") {
+        disabledBtnGo(false);
         //Push la valeur dans un tableau
         options.push(inputValue);
 
@@ -58,7 +62,7 @@ form.addEventListener('submit', (e) => {
 
         li.setAttribute('data-option', optionCount);
         optionCount++;
-        
+
         //Supprimer la valeur en cliquant dessus
         li.addEventListener('click', (e) => {
             //Delete animation
@@ -105,12 +109,21 @@ againBtn.addEventListener('click', (e) => {
 })
 
 
-
-
-
-
 function deleteElement(element) {
+    console.log(options.length);
+    var condition = 0;
+    for (let i = 0; i < options.length; i++) {
+        if (options[i] != "deleted") {
+            condition++;
+        }    
+    }
+    if (condition != 0) {
+        disabledBtnGo(false);
+    }else{
+        disabledBtnGo(true);
+    }
     element.remove();
+
 };
 
 //source: https://gist.github.com/brunomonteiro3/27af6d18c2b0926cdd124220f83c474d
@@ -196,3 +209,12 @@ function HSLToHex(h,s,l) {
   
     return "#" + r + g + b;
   }
+
+function disabledBtnGo(param) {
+    btnGo.disabled = param;
+    if (param == false) {
+        body.classList.remove('locked-goBtn');
+    }else{
+        body.classList.add('locked-goBtn');
+    }
+}

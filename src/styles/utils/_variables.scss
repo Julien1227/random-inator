@@ -14,5 +14,8 @@ $h1: $h2 * $line-height;
 
 $radius: 7.5px;
 
-$t-fast: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-$t-slow: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+$t-fast: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+$t-slow: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+
+$t2-fast: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+$t2-slow: all 1s cubic-bezier(0.34, 1.56, 0.64, 1);

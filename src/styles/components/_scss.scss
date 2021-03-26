@@ -4,6 +4,7 @@
     to {opacity: 1;transform: translateY(0);}
 }
 
+//Animations
 body {
     &.show-result {
         .container{
@@ -16,10 +17,38 @@ body {
                 transform: translateY(0);
                 transition-delay: 0.2s;
                 transition: $t-slow;
+                &-div {
+                    transform: translateY(0);
+                    transition-delay: 0.2s;
+                    transition: $t-slow;
+                }
+
+                .result {
+                    transform: translateY(0px);
+                    transition: $t-slow;
+                }
+    
+                .btn:first-child {
+                    transform: translateY(0px);
+                    transition: $t-slow;
+                    transition-delay: 0.2s;
+                }
+                .btn:last-child {
+                    transform: translateY(0px);
+                    transition: $t-slow;
+                }
             }
         }
     }
+
+    &.locked-goBtn {
+        #go.btn {
+            opacity: 0.2;
+        }
+    }
 }
+
+
 
 .btn {
     cursor: pointer;
@@ -100,15 +129,14 @@ body {
 
 .container {
     &-main {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 550px;
         filter: blur(0px);
         transition: $t-fast;
     }
 
     &-result {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        
         position: absolute;
         z-index: 10000;
         bottom: 0;
@@ -120,6 +148,42 @@ body {
         
         transform: translateY(-100%);
         transition: $t-fast;
+        overflow: hidden;
+        
+        &-div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+
+            transform: translateY(100%);
+            transition: $t-fast;
+            
+            .result {
+                transform: translateY(-250px);
+                transition: $t-slow;
+                transition-delay: 0.5s;
+            }
+
+            .btn:first-child {
+                transform: translateY(350px);
+                transition: $t-slow;
+                transition-delay: 0.5s;
+            }
+            
+            .btn:last-child {
+                transform: translateY(380px);
+                transition: $t-slow;
+                transition-delay: 0.2s;
+            }
+        }
+
         & .result {
             font-size: $h2;
             text-shadow: 0 0 50px $black;
@@ -149,3 +213,4 @@ body {
         }
     }
 }
+
